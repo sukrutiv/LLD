@@ -1,7 +1,8 @@
 public sealed class Singleton
 {
-
-    private static Singleton _instance;
+    //the volatile keyword ensures that the instantiation is complete 
+    //before it can be accessed further helping with thread safety.
+    private static volatile Singleton _instance;
     private static object _instanceLock = new object();
     public static Singleton Instance
     {
